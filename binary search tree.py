@@ -38,3 +38,44 @@ root.insrt(19)
 root.insrt(31)
 root.insrt(42)
 root.display()
+#-------------------------------------------------------
+#constructing a BST from given list
+
+#class to create node
+class Node:
+    def __init__(self, value = None):
+        self.value = value
+        self.left = None
+        self.right = None
+     
+#constructing BST
+def construct_tree(root, value):
+    if root.value:
+        if value < root.value:
+            if root.left == None:
+                root.left = Node(value)
+            else:
+                construct_tree(root.left, value)
+        elif value > root.value:
+            if root.right == None:
+                root.right = Node(value)
+            else:
+                construct_tree(root.right, value)
+    else:
+        root.value = value
+        
+ #printing BST       
+ def display(root):
+    if root:
+        display(root.left)
+        print(root.value, end = " ")
+        display(root.right)
+         
+            
+lst = [1, 2, 3, 4, 5, 6, 7, 8 , 9, 10]
+root = Node()
+
+for value in lst:
+    construct_tree(root, value)
+    
+display(root)
