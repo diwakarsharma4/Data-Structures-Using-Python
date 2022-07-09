@@ -10,7 +10,8 @@
 #Node Structure:
 #Here we are using 3 items in a node :
 #1.data -> stores the data that is character.
-#2.child array -> it is an array that stores the address(to the next character node) respective to the character position(a = 0, b = 1, c = 3, d = 4....z = 25).
+#2.child array -> it is an array that stores the address(to the next character node)
+#respective to the character position(a = 0, b = 1, c = 3, d = 4....z = 25),and rest of the positions have None value.
 #3.word end -> it is a variable that has a value 0 by default, whenever a word ends at the node then the node has word end value 1.
 #The root node always has the data value None or *. Here we are using *.
 
